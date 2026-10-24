@@ -21,6 +21,7 @@ Official Java client for the [jsonscraper Instagram Scraper API](https://jsonscr
 - [License key and access](#2-get-api-access)
 - [First request](#3-make-your-first-request)
 - [Request examples](#more-request-examples)
+- [Complete example catalogue](#complete-request-example-catalogue)
 - [Endpoint reference](docs/endpoints.md)
 - [Configuration](#configuration)
 - [Errors, pagination and caching](#errors-pagination-and-caching)
@@ -109,6 +110,185 @@ Use the generic request method for newly added routes without waiting for an SDK
 - [Read a page of user media](examples/Feed.java) — `GET /v1/user/medias/chunk`.
 
 These examples make one request each. They never loop automatically through your quota. For feed pagination, inspect the returned cursor and `has_more`, then pass the cursor back to the same endpoint.
+
+## Complete request example catalogue
+
+Every link opens a full program with parameters, authentication, timeout, errors and output handling. **[Running the examples](examples/README.md)** explains the commands.
+
+<details>
+<summary>User · 33 examples</summary>
+
+- [Get user info by ID](examples/endpoints/V1UserById.java) — `GET /v1/user/by/id`.
+- [Get user info by username (by ID is faster)](examples/endpoints/V1UserByUsername.java) — `GET /v1/user/by/username`.
+- [Get user info by URL (by ID is faster)](examples/endpoints/V1UserByUrl.java) — `GET /v1/user/by/url`.
+- [Get info about user by ID](examples/endpoints/V1UserAbout.java) — `GET /v1/user/about`.
+- [Get posts (chunked)](examples/endpoints/V1UserMediasChunk.java) — `GET /v1/user/medias/chunk`.
+- [Get pinned posts](examples/endpoints/V1UserMediasPinned.java) — `GET /v1/user/medias/pinned`.
+- [Get reels (chunked)](examples/endpoints/V1UserClipsChunk.java) — `GET /v1/user/clips/chunk`.
+- [Get tagged (mentions) posts](examples/endpoints/V1UserTagMediasChunk.java) — `GET /v1/user/tag/medias/chunk`.
+- [Get user stories by ID](examples/endpoints/V1UserStories.java) — `GET /v1/user/stories`.
+- [Get user stories by username (by ID is faster)](examples/endpoints/V1UserStoriesByUsername.java) — `GET /v1/user/stories/by/username`.
+- [Get user highlights by ID](examples/endpoints/V1UserHighlights.java) — `GET /v1/user/highlights`.
+- [Get user highlights by username (by ID is faster)](examples/endpoints/V1UserHighlightsByUsername.java) — `GET /v1/user/highlights/by/username`.
+- [Search in followers list by query (not working for legacy verified accounts)](examples/endpoints/V1UserSearchFollowers.java) — `GET /v1/user/search/followers`.
+- [Search in followings list by query (not working for legacy verified accounts)](examples/endpoints/V1UserSearchFollowing.java) — `GET /v1/user/search/following`.
+- [Get user following (chunked)](examples/endpoints/V1UserFollowingChunk.java) — `GET /v1/user/following/chunk`.
+- [Get user followers (chunked)](examples/endpoints/V1UserFollowersChunk.java) — `GET /v1/user/followers/chunk`.
+- [Get user info by ID](examples/endpoints/V2UserById.java) — `GET /v2/user/by/id`.
+- [Get user info by username](examples/endpoints/V2UserByUsername.java) — `GET /v2/user/by/username`.
+- [Get user stories by ID](examples/endpoints/V2UserStories.java) — `GET /v2/user/stories`.
+- [Get user stories by username](examples/endpoints/V2UserStoriesByUsername.java) — `GET /v2/user/stories/by/username`.
+- [Get user reels by ID](examples/endpoints/V2UserClips.java) — `GET /v2/user/clips`.
+- [Get user following list](examples/endpoints/V2UserFollowing.java) — `GET /v2/user/following`.
+- [Get user followers list](examples/endpoints/V2UserFollowers.java) — `GET /v2/user/followers`.
+- [Get media where user is tagged](examples/endpoints/V2UserTagMedias.java) — `GET /v2/user/tag/medias`.
+- [Get user highlights by ID](examples/endpoints/V2UserHighlights.java) — `GET /v2/user/highlights`.
+- [Get user highlights by username (by ID is faster)](examples/endpoints/V2UserHighlightsByUsername.java) — `GET /v2/user/highlights/by/username`.
+- [Get business suggestions for user](examples/endpoints/V2UserExploreBusinessesById.java) — `GET /v2/user/explore/businesses/by/id`.
+- [Get suggested profiles for user](examples/endpoints/V2UserSuggestedProfiles.java) — `GET /v2/user/suggested/profiles`.
+- [Get user followers (chunked)](examples/endpoints/GqlUserFollowersChunk.java) — `GET /gql/user/followers/chunk`.
+- [Get user following (chunked)](examples/endpoints/GqlUserFollowingChunk.java) — `GET /gql/user/following/chunk`.
+- [Get user reposts](examples/endpoints/GqlUserReposts.java) — `GET /gql/user/reposts`.
+- [Get user clips (reels)](examples/endpoints/GqlUserClips.java) — `GET /gql/user/clips`.
+- [Get user profile media (grid)](examples/endpoints/GqlUserMedias.java) — `GET /gql/user/medias`.
+
+</details>
+
+<details>
+<summary>Media · 20 examples</summary>
+
+- [Get media info by ID](examples/endpoints/V1MediaById.java) — `GET /v1/media/by/id`.
+- [Get media info by shortcode](examples/endpoints/V1MediaByCode.java) — `GET /v1/media/by/code`.
+- [Get media info by URL](examples/endpoints/V1MediaByUrl.java) — `GET /v1/media/by/url`.
+- [Get media insights](examples/endpoints/V1MediaInsight.java) — `GET /v1/media/insight`.
+- [Get media comments (chunked)](examples/endpoints/V1MediaCommentsChunk.java) — `GET /v1/media/comments/chunk`.
+- [Get media likers](examples/endpoints/V1MediaLikers.java) — `GET /v1/media/likers`.
+- [Get author of the media](examples/endpoints/V1MediaUser.java) — `GET /v1/media/user`.
+- [Get media oEmbed data](examples/endpoints/V1MediaOembed.java) — `GET /v1/media/oembed`.
+- [Get media code from media ID (PK) (unlimited usage)](examples/endpoints/V1MediaCodeFromPk.java) — `GET /v1/media/code/from/pk`.
+- [Get media ID (PK) from shortcode (unlimited usage)](examples/endpoints/V1MediaPkFromCode.java) — `GET /v1/media/pk/from/code`.
+- [Get media ID (PK) from URL (unlimited usage)](examples/endpoints/V1MediaPkFromUrl.java) — `GET /v1/media/pk/from/url`.
+- [Get media info by ID](examples/endpoints/V2MediaInfoById.java) — `GET /v2/media/info/by/id`.
+- [Get media info by shortcode](examples/endpoints/V2MediaInfoByCode.java) — `GET /v2/media/info/by/code`.
+- [Get media info by URL](examples/endpoints/V2MediaInfoByUrl.java) — `GET /v2/media/info/by/url`.
+- [Get media comments](examples/endpoints/V2MediaComments.java) — `GET /v2/media/comments`.
+- [Get media likers](examples/endpoints/V2MediaLikers.java) — `GET /v2/media/likers`.
+- [Check comment for offensiveness](examples/endpoints/V2MediaCommentOffensive.java) — `GET /v2/media/comment/offensive`.
+- [Get comment replies](examples/endpoints/V2MediaCommentsReplies.java) — `GET /v2/media/comments/replies`.
+- [Get media likers by media ID](examples/endpoints/GqlMediaLikers.java) — `GET /gql/media/likers`.
+- [Get video usertags by media IDs](examples/endpoints/GqlMediaUsertags.java) — `GET /gql/media/usertags`.
+
+</details>
+
+<details>
+<summary>Story · 6 examples</summary>
+
+- [Get story by ID](examples/endpoints/V1StoryById.java) — `GET /v1/story/by/id`.
+- [Get story by URL](examples/endpoints/V1StoryByUrl.java) — `GET /v1/story/by/url`.
+- [Download story by ID](examples/endpoints/V1StoryDownload.java) — `GET /v1/story/download`.
+- [Download story by direct media URL (unlimited usage)](examples/endpoints/V1StoryDownloadByUrl.java) — `GET /v1/story/download/by/url`.
+- [Download story file by story URL (IG story link)](examples/endpoints/V1StoryDownloadByStoryUrl.java) — `GET /v1/story/download/by/story/url`.
+- [Get story by ID](examples/endpoints/V2StoryById.java) — `GET /v2/story/by/id`.
+
+</details>
+
+<details>
+<summary>Highlight · 3 examples</summary>
+
+- [Get highlight by ID](examples/endpoints/V1HighlightById.java) — `GET /v1/highlight/by/id`.
+- [Get highlight by URL](examples/endpoints/V1HighlightByUrl.java) — `GET /v1/highlight/by/url`.
+- [Get highlight by ID](examples/endpoints/V2HighlightById.java) — `GET /v2/highlight/by/id`.
+
+</details>
+
+<details>
+<summary>Location · 6 examples</summary>
+
+- [Get location by ID](examples/endpoints/V1LocationById.java) — `GET /v1/location/by/id`.
+- [Get location top medias](examples/endpoints/V1LocationMediasTop.java) — `GET /v1/location/medias/top`.
+- [Get location recent medias](examples/endpoints/V1LocationMediasRecent.java) — `GET /v1/location/medias/recent`.
+- [Get location top medias (chunked)](examples/endpoints/V1LocationMediasTopChunk.java) — `GET /v1/location/medias/top/chunk`.
+- [Get location recent medias (chunked)](examples/endpoints/V1LocationMediasRecentChunk.java) — `GET /v1/location/medias/recent/chunk`.
+- [Search locations](examples/endpoints/V1LocationSearch.java) — `GET /v1/location/search`.
+
+</details>
+
+<details>
+<summary>Hashtag · 8 examples</summary>
+
+- [Get hashtag by name](examples/endpoints/V1HashtagByName.java) — `GET /v1/hashtag/by/name`.
+- [Get hashtag top medias](examples/endpoints/V1HashtagMediasTop.java) — `GET /v1/hashtag/medias/top`.
+- [Get hashtag top medias (chunked)](examples/endpoints/V1HashtagMediasTopChunk.java) — `GET /v1/hashtag/medias/top/chunk`.
+- [Get hashtag recent medias (chunked)](examples/endpoints/V1HashtagMediasTopRecentChunk.java) — `GET /v1/hashtag/medias/top/recent/chunk`.
+- [Get hashtag clips (chunked)](examples/endpoints/V1HashtagMediasClipsChunk.java) — `GET /v1/hashtag/medias/clips/chunk`.
+- [Get hashtag by name](examples/endpoints/V2HashtagByName.java) — `GET /v2/hashtag/by/name`.
+- [Get hashtag top medias](examples/endpoints/V2HashtagMediasTop.java) — `GET /v2/hashtag/medias/top`.
+- [Get hashtag recent medias](examples/endpoints/V2HashtagMediasRecent.java) — `GET /v2/hashtag/medias/recent`.
+
+</details>
+
+<details>
+<summary>Search · 5 examples</summary>
+
+- [Search hashtags](examples/endpoints/V1SearchHashtags.java) — `GET /v1/search/hashtags`.
+- [Search users](examples/endpoints/V1SearchUsers.java) — `GET /v1/search/users`.
+- [Search music](examples/endpoints/V1SearchMusic.java) — `GET /v1/search/music`.
+- [Search hashtags](examples/endpoints/V2SearchHashtags.java) — `GET /v2/search/hashtags`.
+- [Search music](examples/endpoints/V2SearchMusic.java) — `GET /v2/search/music`.
+
+</details>
+
+<details>
+<summary>Fbsearch · 8 examples</summary>
+
+- [Search places](examples/endpoints/V1FbsearchPlaces.java) — `GET /v1/fbsearch/places`.
+- [Top search](examples/endpoints/V1FbsearchTopsearch.java) — `GET /v1/fbsearch/topsearch`.
+- [Search accounts (users)](examples/endpoints/V2FbsearchAccounts.java) — `GET /v2/fbsearch/accounts`.
+- [Search places (locations)](examples/endpoints/V2FbsearchPlaces.java) — `GET /v2/fbsearch/places`.
+- [Top search](examples/endpoints/V2FbsearchTopsearch.java) — `GET /v2/fbsearch/topsearch`.
+- [Search reels (clips)](examples/endpoints/V2FbsearchReels.java) — `GET /v2/fbsearch/reels`.
+- [Search users](examples/endpoints/V3FbsearchAccounts.java) — `GET /v3/fbsearch/accounts`.
+- [Search places (locations)](examples/endpoints/V3FbsearchPlaces.java) — `GET /v3/fbsearch/places`.
+
+</details>
+
+<details>
+<summary>Userstream · 2 examples</summary>
+
+- [Get user info stream by ID](examples/endpoints/V2UserstreamById.java) — `GET /v2/userstream/by/id`.
+- [Get user info stream by username](examples/endpoints/V2UserstreamByUsername.java) — `GET /v2/userstream/by/username`.
+
+</details>
+
+<details>
+<summary>Track · 2 examples</summary>
+
+- [Get music feed by canonical ID](examples/endpoints/V2TrackByCanonicalId.java) — `GET /v2/track/by/canonical/id`.
+- [Get music feed by ID](examples/endpoints/V2TrackById.java) — `GET /v2/track/by/id`.
+
+</details>
+
+<details>
+<summary>Comments · 2 examples</summary>
+
+- [Get comments list by media ID (chunked)](examples/endpoints/GqlCommentsChunk.java) — `GET /gql/comments/chunk`.
+- [Get threaded replies list by comment ID (chunked)](examples/endpoints/GqlCommentsThreadedChunk.java) — `GET /gql/comments/threaded/chunk`.
+
+</details>
+
+<details>
+<summary>Comment · 1 examples</summary>
+
+- [Get comment likers list by comment ID (chunked)](examples/endpoints/GqlCommentLikersChunk.java) — `GET /gql/comment/likers/chunk`.
+
+</details>
+
+<details>
+<summary>Topsearch · 1 examples</summary>
+
+- [Search top content by keyword](examples/endpoints/GqlTopsearch.java) — `GET /gql/topsearch`.
+
+</details>
 
 ## Configuration
 
