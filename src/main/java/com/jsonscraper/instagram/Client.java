@@ -37,7 +37,7 @@ public class Client {
         Map<String,Object> q=new LinkedHashMap<>();if(params!=null)params.forEach((k,v)->{if(v!=null)q.put(k,v);});
         if(cacheTimeout!=null)q.putIfAbsent("cache_timeout",cacheTimeout);q.put("license_key",key);
         StringJoiner query=new StringJoiner("&");q.forEach((k,v)->query.add(encode(k)+"="+encode(v.toString())));
-        var req=HttpRequest.newBuilder(URI.create(baseUrl+path+"?"+query)).timeout(timeout).header("Accept","application/json").header("User-Agent","jsonscraper-java/0.1.0").GET().build();
+        var req=HttpRequest.newBuilder(URI.create(baseUrl+path+"?"+query)).timeout(timeout).header("Accept","application/json").header("User-Agent","jsonscraper-java/0.1.1").GET().build();
         for(int attempt=0;attempt<=retries;attempt++){
             HttpResponse<byte[]> response;
             try{response=http.send(req,HttpResponse.BodyHandlers.ofByteArray());}catch(IOException e){throw new IOException("Unable to reach jsonscraper API");}
