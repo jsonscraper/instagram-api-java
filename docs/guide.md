@@ -50,7 +50,7 @@ cd instagram-api-java
 mvn install
 ```
 
-After `mvn install`, add `com.jsonscraper:instagram-api:0.1.1` to your application dependencies. This version installs locally; it is not yet published to Maven Central.
+After `mvn install`, add `com.jsonscraper:instagram-api:0.1.2` to your application dependencies. This version installs locally; it is not yet published to Maven Central.
 
 To develop from a checkout, clone this repository and install its dependencies using the package manager for this SDK.
 
